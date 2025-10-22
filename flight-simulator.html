@@ -1,0 +1,388 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sreelekshmi Sreekumar's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>F-35 Throttle Controller</h1>
+						<p>Created a custom throttle controller for use with flight simulation software.</p>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<span class="image main"><img src="images/IMG_6273.jpg"/></span>
+								<h2>Senior Design Project</h2>
+								<h3>Mechanical Design</h3>
+									<p>
+									The F-35 Throttle Controller was engineered to replicate the <strong>ergonomics, detents, and resistance
+									characteristics</strong> of the actual aircraft throttle while remaining affordable and modular. The throttle
+									had to mount securely to Talon Simulations’ 2-DoF motion platform and align with in-game cockpit geometry
+									for a seamless VR experience. Benchmarking against commercial products from Wraith Systems, RealSimulator,
+									and Bugeye revealed a gap: existing throttles were either prohibitively expensive or lacked authentic feel.
+									Our design sought to bridge this gap by combining realistic tactile response with manufacturability under a
+									$1,000 budget.
+									</p>
+
+									<p>
+									From a requirements standpoint, the throttle needed to reproduce <em>idle, military power, and afterburner
+									detents</em> with both tactile and mechanical fidelity. Target resistance was set between 1–3 pounds for
+									normal use, with peaks up to 5 pounds under high-performance flight conditions. To meet these targets, the
+									design incorporated a <strong>magnet-based detent system and a DryLin linear rail mechanism</strong> that
+									provided smooth travel with distinct stops at critical throttle positions. Materials included reinforced
+									thermoplastics via 3D printing for housings, and machined aluminum for high-stress components.
+									</p>
+
+									<figure>
+									<img src="images/throttle1.png" alt="SolidWorks CAD Design of the Linear Rail Mechanism" width="350" height="220" style="display:block; margin:auto;"/>
+									<figcaption>SolidWorks CAD design of the linear rail mechanism.</figcaption>
+									</figure>
+									<br>
+									<p>
+									A <strong>belt and pulley system</strong> was modeled within the CAD environment to simulate the throttle’s
+									motion transfer mechanism. This subsystem converts the physical motion of the throttle lever into a trackable
+									signal that can be interpreted by the flight simulator software. Linear motion analyses were performed to
+									evaluate tension, deflection, and backlash within the belt system, ensuring consistent performance and accurate
+									positional feedback across the entire throttle range. The CAD model served not only as a visualization tool but
+									also as a functional design validation platform, allowing the team to troubleshoot mechanical interactions
+									before prototyping began.
+									</p>
+									
+									<p>
+									To further enhance fidelity, the team modeled the <strong>Taiss optical rotary encoder</strong> that provides
+									high-resolution throttle position feedback. The model reflected shaft diameter, mounting points, and electrical
+									interfaces to ensure proper integration. Including the encoder in the assembly allowed for verification of spatial
+									compatibility and the design of custom mounts and couplings. This enabled precise alignment with the throttle’s
+									moving components and streamlined system integration planning.
+									</p>
+
+									<figure>
+									<img src="images/throttle2.png" alt="Taiss Optical Rotary Encoder CAD Design" width="200" height="250" style="display:block; margin:auto;"/>
+									<figcaption>CAD model of the Taiss Optical Rotary Encoder for throttle position tracking.</figcaption>
+									</figure>
+									<br>
+									<p>
+									The <strong>Igus DryLin® T HKA carriage</strong> played a critical role in providing precise linear motion control
+									and customizable resistance during operation. The carriage’s adjustable side knob allowed fine-tuning of bearing
+									preload against the rail, introducing variable frictional resistance along the axis. This feature simulated
+									different throttle tension profiles, such as the increased resistance when pushing into afterburner zones, without
+									requiring additional springs or dampers. Rear-positioned Allen screws locked the carriage structurally, eliminating
+									undesired lateral or vertical play. This constrained the system to pure x-axis motion, preventing wobble or tilt and
+									ensuring clean, repeatable travel for consistent sensor readings.
+									</p>
+
+									<p>
+									To accurately reproduce the F-35 throttle grip, known as the <em>cowpie</em>, the team conducted a
+									<strong>3D scan at the Air Force Agency for Modeling and Simulation (AFAMS)</strong>. Using a CrealityScan
+									3D scanner, we captured the geometry of a reference throttle directly from an operational simulator.
+									This scan provided the baseline dimensions and contours of the grip, which are not publicly available.
+									</p>
+
+									<p>
+									The raw scan data presented challenges: many surfaces were patchy or uneven, and holes existed where
+									buttons and switches had been scanned. To address this, the mesh was imported into <strong>Blender Studio</strong>
+									where the geometry was smoothed, gaps were filled, and button holes were reconstructed. The repaired mesh was
+									then transferred into <strong>SolidWorks</strong>, where precise cutouts were modeled for each switch, hat, and
+									rotary input. This hybrid workflow of scanning, mesh editing, and CAD refinement allowed the team to create a
+									dimensionally accurate and manufacturable throttle grip.
+									</p>
+
+									<div class="row">
+									<div class="col-12">
+										<figure style="text-align: center;">
+										<img src="images/throttle3.png" alt="Initial scans taken of AFAMS throttle." loading="lazy" width="200" height="200"/>
+										<img src="images/throttle4.png" alt="Alternate scan view" loading="lazy" width="200" height="200"/>
+										<figcaption>Initial scans taken of AFAMS throttle.</figcaption>
+										</figure>
+									</div>
+									</div>
+									<br>
+									<div class="row">
+									<div class="col-12">
+										<figure style="text-align: center;">
+										<img src="images/throttle5.png" alt="Cowpie after initial patching." loading="lazy" width="200" height="200"/>
+										<img src="images/throttle6.png" alt="Alternate cowpie view" loading="lazy" width="200" height="200"/>
+										<figcaption>Cowpie after initial patching.</figcaption>
+										</figure>
+									</div>
+									</div>
+									<br>
+									<p>
+									Once refined, the model was <strong>3D printed</strong> using PLA for rapid prototyping. This allowed the
+									team to iteratively test button placement, ergonomics, and internal clearances. The iterative prototyping
+									process ensured that by the time the actual switches arrived, the grip geometry was already optimized for
+									both fit and function. By leveraging 3D scanning and digital mesh refinement, the team shortened the
+									development cycle while maintaining fidelity to the F-35’s true control geometry.
+									</p>
+
+									<div class="row">
+									<div class="col-12">
+										<figure style="text-align: center;">
+											<img src="images/throttle8.png" loading="lazy" width="150" height="150"/>
+											<img src="images/throttle9.png" loading="lazy" width="150" height="150"/>
+											<img src="images/throttle10.png" loading="lazy" width="150" height="150"/>
+											<figcaption>3D printed prototype of the F-35 cowpie grip with button cutouts after CAD refinement.</figcaption>
+										</figure>
+									</div>
+									</div>
+									<br>
+									<p>
+									Overall, the mechanical design provided both a <strong>digital validation tool and a manufacturing roadmap</strong>.
+									By combining linear rails, belt-driven motion transfer, rotary encoders, and ergonomically modeled grips, the design
+									laid a robust foundation for physical prototyping. This approach ensured that once built, the throttle would deliver
+									smooth travel across its 9-inch range, crisp magnetic detents, and reliable positional accuracy.
+									</p>
+
+								<h3>Electronics Integration</h3>
+									<p>
+									The throttle’s electronics were built around a <strong>Raspberry Pi 5</strong> acting as the central controller.
+									Because the Pi has no native analog inputs, we added an <strong>MCP3008 10-bit ADC</strong> on SPI to read analog
+									devices (e.g., multi-axis hats and potentiometers), while the Pi’s GPIO handled the <strong>digital switches,
+									toggles, and the Taiss optical rotary encoder</strong> used for primary throttle position. In total, the system
+									supported <strong>~29 inputs</strong> across the grip and base.
+									</p>
+
+									<figure>
+									<img class="img-fluid" src="images/System-Overview.png" alt="F-35 flight simulator system overview block diagram" loading="lazy" width="600" height="285" style="display:block; margin:auto;"/>
+									<figcaption>
+										System overview: mechanical hardware (green), electronic hardware (yellow), and the programming center (blue).
+										Please zoom in to see details.
+									</figcaption>
+									</figure>
+									<br>
+									<p>
+									The wiring harness routed inputs to a small breakout/terminal board and then to the Pi. <strong>Digital lines</strong>
+									used pull-ups/pull-downs and software debouncing to tame switch chatter, while <strong>analog lines</strong>
+									fed the MCP3008’s CH0–CH7 channels via short runs and protective <em>voltage dividers</em> where necessary to keep
+									everything within 3.3&nbsp;V logic limits. The encoder produced clean quadrature pulses read by the Pi with edge
+									interrupts. A simple health-check layer in software flagged lines that were floating or saturated, speeding up
+									troubleshooting during bring-up.
+									</p>
+
+									<figure>
+									<img class="img-fluid" src="images/F35_Electrical_Diagram.png" alt="Throttle electronics diagram with MCP3008 and Raspberry Pi 5 GPIO" loading="lazy" width="600" height="388" style="display:block; margin:auto;"/>
+									<figcaption>
+										Electronics diagram: Raspberry Pi 5 GPIO + MCP3008 (SPI) for analog inputs, with grouped grounds and power rails.
+										Please zoom in to see details.
+									</figcaption>
+									</figure>
+									<br>
+									<p>
+									On the software side, a Python service on the Pi sampled the MCP3008, polled/latched GPIO states, applied
+									<strong>debounce and dead-zone filters</strong>, and packed everything into a compact message sent over
+									<strong>UDP</strong> to a PC client. There, inputs were mapped to the simulator using <em>vJoy</em> and
+									<em>SimConnect</em> so the throttle appeared as a native controller in <em>Microsoft Flight Simulator</em> and
+									<em>DCS World</em>.
+									</p>
+
+									<p>
+									The build also came with real-world hurdles. Some critical components arrived late, so we <strong>repurposed
+									buttons from older controllers</strong> that lacked documentation. That forced careful bench testing to determine
+									pinouts, signal types, and required conditioning. Wiring took longer than planned because we worked methodically to
+									<strong>avoid shorts and over-voltage conditions</strong>—measuring each rail with a multimeter, confirming grounds,
+									and validating that any 5&nbsp;V devices were safely level-shifted or isolated from the Pi’s 3.3&nbsp;V logic.
+									</p>
+
+									<p>
+									A major issue came from the <strong>Taiss optical rotary encoder</strong>. Although rated for 5–24&nbsp;V operation,
+									we discovered during testing that its internal regulator required at least ~7&nbsp;V to output stable and accurate
+									signals. At 5&nbsp;V, the readings were noisy and inconsistent. The solution was to <strong>power the encoder from a
+									dedicated higher-voltage supply</strong> instead of the Pi’s 5&nbsp;V rail, while keeping the signal lines properly
+									level-shifted for compatibility. This ensured accurate position tracking without risking the Pi’s GPIO.
+									</p>
+
+									<p>
+									Despite the administrative delays and scavenged parts, the final integration was stable and repeatable, with clean
+									encoder counts and reliable button states across the full throttle range. The architecture delivered a
+									<strong>responsive, low-latency pipeline</strong> from physical inputs to simulator actions, while remaining
+									maintainable: analog expansion is as simple as assigning another MCP3008 channel, and additional digital inputs can
+									be added through spare GPIO and I²C/SPI expanders if needed.
+									</p>
+
+								<h3>Software Development</h3>
+									<p>
+									The software architecture for the throttle system was designed to <strong>bridge low-level hardware inputs with
+									high-level simulator commands</strong>. On the <strong>Raspberry Pi 5</strong>, a Python service continuously
+									polled GPIO states, read analog channels from the MCP3008 over SPI, and counted quadrature pulses from the
+									Taiss rotary encoder. Custom <strong>debounce and cooldown logic</strong> filtered mechanical switch noise, while
+									<strong>analog dead-zones</strong> stabilized the output of multi-axis hats and joysticks. This ensured that user
+									inputs were responsive without being jittery or over-sensitive.
+									</p>
+
+									<p>
+									Processed inputs were encoded into a lightweight packet and transmitted to the PC via <strong>UDP sockets</strong>.
+									This networking layer kept latency extremely low while allowing the Pi to operate headless. On the PC side, the
+									throttle inputs were mapped through <em>vJoy</em> to appear as a <strong>virtual joystick</strong>, enabling direct
+									compatibility with <em>Microsoft Flight Simulator</em> and <em>DCS World</em>. For MSFS, additional integration was
+									achieved through <em>SimConnect</em>, which allowed custom events and throttle positions to be read natively by the
+									simulator.
+									</p>
+
+									<p>
+									To simplify setup and testing, the team built a <strong>Python/Tkinter-based GUI</strong> that acted as the user’s
+									front end. The GUI connected directly to the Pi without requiring repeated manual configuration—only the Pi’s IP
+									address needed to be entered once for each new Wi-Fi network. After that, the GUI handled connections
+									automatically, launching the Pi-side program to stream inputs to vJoy.
+									The GUI supported <strong>live tracking</strong> of all throttle inputs, including button presses, toggle states,
+									and throttle position. This allowed users to visually confirm that hardware signals were being correctly captured
+									before entering the simulator. The GUI also featured a <strong>dedicated instructions tab</strong> with setup
+									guidance, making the system approachable for new operators and providing troubleshooting steps for connectivity
+									or mapping issues.
+									</p>
+
+									<figure>
+									<img class="img" src="images/gui-snippet.PNG" alt="Throttle calibration and status GUI" height="400" style="display:block; margin:auto;"/>
+									<figcaption>
+										GUI tool for live monitoring, calibration, and CSV logging of throttle inputs.
+									</figcaption>
+									</figure>
+									<br>
+									<p>
+									Several issues arose during development. <strong>Analog hats</strong> initially proved too sensitive, producing
+									rapid toggling from small finger movements. This was corrected with expanded dead-zones and short cooldown timers.
+									The <strong>rotary encoder</strong> introduced lag when polled directly via interrupts, which was solved by switching
+									to a threaded listener using the <em>pigpio</em> library. Button mapping for 29 inputs also required careful
+									organization, especially to align with <strong>official F-35 HOTAS documentation</strong> so that simulator functions
+									matched real-world control locations.
+									</p>
+
+									<p>
+									Through these refinements, the software achieved <strong>real-time responsiveness and robust input handling</strong>.
+									Together with the electronics and mechanical systems, it completed the end-to-end throttle controller pipeline:
+									from user action on the grip, to microsecond-level signal processing, to full integration within modern flight
+									simulation platforms.
+									</p>
+
+								<h3>Testing & Validation</h3>
+									<p>
+									After completing the integration of mechanical, electrical, and software systems, the team conducted a comprehensive
+									<strong>testing and validation campaign</strong> to ensure the throttle performed reliably under real-world conditions.
+									The process began with <strong>bench testing</strong> of wiring and GPIO channels. Using a multimeter, each connection
+									was verified for continuity and correct voltage levels to prevent shorts or over-voltage damage to the Raspberry Pi.
+									Special care was taken with repurposed switches, which lacked documentation and required empirical testing to identify
+									pinouts.
+									</p>
+
+									<p>
+									Validation of the <strong>rotary encoder</strong> was a critical step. Early tests revealed unstable counts when powered
+									from 5&nbsp;V, which was traced to an internal regulator that required ~7&nbsp;V minimum for proper operation. Once the
+									encoder was powered from an external supply and signals were level-shifted for compatibility, it delivered consistent,
+									high-resolution tracking across the full 9-inch throttle throw.
+									</p>
+
+									<p>
+									On the mechanical side, the <strong>Igus rail carriage</strong> and linear motion system were tested for smoothness,
+									alignment, and long-term wear. The carriage maintained precise x-axis motion without lateral play, ensuring reliable
+									input readings. Detent mechanisms were exercised repeatedly to confirm crisp engagement at afterburner and idle zones,
+									simulating the tactile feedback of a real throttle.
+									</p>
+
+									<p>
+									The <strong>GUI validation</strong> phase confirmed that all 29 inputs could be live-tracked in real time without
+									lag or false triggering. The interface also successfully launched the Pi-side program and maintained stable UDP
+									communication, with the “No signal from Pi” status working as a diagnostic tool during simulated disconnects.
+									</p>
+
+									<p>
+									Finally, the system underwent <strong>simulator integration testing</strong>. Inputs streamed from the Pi were mapped
+									through vJoy and SimConnect into <em>Microsoft Flight Simulator</em> and <em>DCS World</em>. Throttle movement,
+									button presses, and toggle states were accurately reflected in the cockpit environment, validating the end-to-end
+									control pipeline from hardware grip to virtual aircraft.
+									</p>
+
+									<p>
+									While <strong>force feedback</strong> was not implemented in this version of the throttle, the mechanical detents and
+									friction adjustments provided sufficient tactile realism for immersive flight simulation. The testing campaign verified
+									that the throttle was both <strong>robust and responsive</strong>, laying the foundation for future iterations that
+									could introduce haptic or force-feedback elements.
+									</p>
+
+								<h3>Future Improvements</h3>
+									<p>
+									While the throttle system successfully met its functional requirements, several areas for improvement were
+									identified during development and testing. One of the most immediate challenges was <strong>part sourcing</strong>.
+									Delays in component deliveries forced the team to repurpose buttons from older controllers, which created
+									documentation gaps and extended wiring time. Future iterations would benefit from <strong>ready access to hardware</strong>,
+									reducing project risk and build time.
+									</p>
+
+									<p>
+									Another limitation was <strong>housing size</strong>. The throttle body was constrained by the available 3D printers,
+									leading to a modular print-and-assemble process. With access to a larger printer, or a housing redesign optimized for
+									available tools, the system could achieve a stronger and more seamless structure. Similarly, <strong>in-house 3D printing
+									of buttons</strong> would reduce production expenses while giving the team full control over ergonomics and durability.
+									</p>
+
+									<p>
+									Mechanically, improvements to the <strong>linear rail system</strong> could further enhance stability. A dual-rail
+									configuration would reduce wobble and distribute forces evenly along the lever, improving long-term wear and input
+									consistency. Additionally, the detent system could be made more <strong>customizable</strong> by replacing static
+									magnetic detents with a <em>cam/roller spring system</em>, allowing pilots to adjust detent resistance profiles to match
+									different flight scenarios.
+									</p>
+
+									<p>
+									On the electrical side, the team identified an issue with <strong>wiring noise</strong>. During demonstrations,
+									overlapping button wires caused <em>phantom activations</em>, where random button presses registered without user input.
+									This will be addressed in future revisions by improving cable management, adding shielding where necessary, and spacing
+									parallel wire runs to reduce interference. Together, these refinements would significantly improve system reliability
+									and polish for long-term use.
+									</p>
+								<ul class="actions special">
+    								<li><a href="https://github.com/sreeskmr/F35-Flight-Simulator/tree/main" class="button icon brands fa-github">View Project GitHub</a></li>
+    								<li><a href="index.html#first" class="button">Back to Projects</a></li>
+								</ul>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h2>Contact Me</h2>
+							<dl class="alt">
+								<dt>Location</dt>
+								<dd>Orlando, Florida, USA</dd>
+								<dt>Phone</dt>
+								<dd>(786) 518-8017</dd>
+								<dt>Email</dt>
+								<dd>sreelekshmi.sreek@gmail.com</dd>
+							</dl>
+							<ul class="icons">
+								<li><a href="https://github.com/sreeskmr/" class="icon brands fa-github alt"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.linkedin.com/in/sreelekshmisreekumar/" class="icon brands fa-linkedin alt"><span class="label">Facebook</span></a></li>
+							</ul>
+						</section>
+						<p class="copyright">&copy; Hire Me Blue Origin. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

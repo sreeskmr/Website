@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sreelekshmi Sreekumar's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Solar Sintering System</h1>
+						<p>Built a full-scale solar sintering system to test lunar construction with regolith.</p>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<span class="image main"><img src="images/sintering.PNG" alt=""/></span>
+								<h2>Exolith Lab</h2>
+								<p> At the University of Central Florida’s Exolith Lab, I worked on developing a proof-of-concept
+                                    system for <strong>solar sintering of lunar regolith</strong>: a process that uses concentrated sunlight
+                                    to fuse simulated lunar soil into solid blocks. This technique addresses one of the biggest
+                                    challenges for off-Earth construction: how to build infrastructure on the Moon without transporting
+                                    massive amounts of material from Earth.
+                                </p>
+                                <figure>
+                                    <img class="img-fluid" src="images/Picture3.svg" alt="Diagram of Fresnel lens, regolith bed, and motion system" loading="lazy" style="display:block; margin:auto;" />
+                                    <figcaption>System schematic showing the Fresnel lens focusing onto the regolith bed and the motion axes.</figcaption>
+                                </figure>
+                                <br>
+                                <p>
+                                    Our team designed and built a semi-automated sintering stand featuring a large Fresnel lens that
+                                    concentrates sunlight into a high-temperature focal point. Mounted on a steel and 80/20 aluminum
+                                    extrusion frame, the system integrates three-axis motion control, limit switches for safety,
+                                    and a <strong>Raspberry Pi with computer-vision solar tracking</strong> to keep the lens aligned with
+                                    the Sun throughout the day.
+                                </p>
+                                <p>
+                                    The process begins with a mixture of <strong>LHS-1 lunar highlands simulant and aluminum powder</strong>
+                                    (75:25 by weight), which is spread into thin layers. The concentrated solar beam is then guided
+                                    across the surface in programmed paths, locally melting and bonding the material. Layer by layer,
+                                    this approach demonstrates how lunar regolith could be turned into functional bricks or structural
+                                    elements using only sunlight as the energy source.
+                                </p>
+                                <figure>
+                                    <img class="img-fluid" src="images/Picture4.png" alt="Control application for jogging axes, alignment, and G-code execution" width="400" loading="lazy" style="display:block; margin:auto;"/>
+                                    <figcaption>Control app for alignment, motion, presets, and emergency stop.</figcaption>
+                                </figure>
+                                <br>
+                                <p>
+                                    We faced several challenges while developing the solar sintering system. 
+                                    Our first issue was figuring out how to rotate the Fresnel lens for elevation; 
+                                    we narrowed our design options to a belt-and-pulley system or using Kevlar rope with a DC motor, 
+                                    ultimately choosing the latter for cost efficiency. 
+                                    The bottom motor controlling azimuth was originally the same DC motor used for the X and Y axes 
+                                    and mounted on a 3D-printed part, but it struggled with slack during rotation and the print weakened over time. 
+                                    This was largely due to earlier cost-saving design choices and the steep learning curve of the previous undergraduate team, 
+                                    so we upgraded the system with a gearbox and wheel hub for more reliable performance. 
+                                    The motors also overheated when exposed to direct sunlight, which we resolved by insulating them with thermal bubble wrap. 
+                                    Beyond these major fixes, we encountered many smaller mechanical and coding issues that we worked through iteratively, 
+                                    each one improving the system’s overall reliability. <em>Putting all those issues into one article might make this article
+                                    a pain to read.</em>
+                                </p>
+
+                                <p>
+                                    Testing confirmed that the system can reliably produce fused regions and small multi-layer samples.
+                                    Darker, glassy areas in the sintered tracks indicated strong bonding, while compaction techniques
+                                    significantly improved part integrity. Weather presented limitations; clouds or any haze reduced efficiency,
+                                    but under clear skies the stand consistently achieved fusion at high temperatures using no external
+                                    power beyond sunlight.
+                                </p>
+                                <figure>
+                                    <img src="images/Picture5.jpg" alt="Sequence view of the solar sintering process" loading="lazy" width="316" height="306" style="display:block; margin:auto;"/>
+                                    <figcaption>Solar sintering in action under clear-sky conditions.</figcaption>
+                                </figure>
+                                <br>
+                                <figure>
+                                    <img src="images/Picture6.png" alt="Single-layer sintered shape created from G-code path" loading="lazy" style="display:block; margin:auto;"/>
+                                    <figcaption>Single-layer shape from a programmed toolpath.</figcaption>
+                                </figure>
+                                <br>
+                                <figure>
+                                    <img src="images/Picture7.jpg" alt="Comparison: compacted-and-sintered vs only-sintered sample" loading="lazy" width="320" height="183" style="display:block; margin:auto;"/>
+                                    <figcaption>a) Compacted and sintered sample b) Only sintered sample.</figcaption>
+                                </figure>
+                                <br>
+                                <p>
+                                    While waiting for clear weather conditions to continue solar sintering experiments, we performed
+                                    <strong>flexural bend and compression tests</strong> on premature samples in an effort to extract
+                                    preliminary mechanical data. Even though the samples were inconsistently fused, these tests helped
+                                    us assess the degree of bonding achieved and provided early insight into potential material strength.
+                                </p>
+                                <div class="row">
+                                    <div class="col-6 col-12-small">
+                                    <figure>
+                                        <img src="images/flexural.jpg" alt="Flexural bend test on early sintered sample" loading="lazy" width="200" height="300" style="display:block; margin:auto;"/>
+                                        <figcaption>Flexural bend test on a premature sintered sample.</figcaption>
+                                    </figure>
+                                    </div>
+                                    <div class="col-6 col-12-small">
+                                    <figure>
+                                        <img src="images/compression.JPEG" alt="Compression test on regolith sample" loading="lazy" width="200" height="300" style="display:block; margin:auto;"/>
+                                        <figcaption>Compression test setup used to evaluate bonding strength.</figcaption>
+                                    </figure>
+                                    </div>
+                                </div>
+                                <br>
+                                <p>
+                                    The results highlighted significant variability: some samples fractured almost immediately during
+                                    handling, while others withstood noticeable stress before failure. Interestingly, <strong>compression
+                                    tests performed better than flexural bend tests</strong>. This indicated that the premature samples
+                                    could carry load in compression, but their internal porosity and lack of uniform bonding made them
+                                    brittle under bending or tensile stresses.
+                                </p>
+                                <p>
+                                    This work highlights the potential of <strong>in-situ resource utilization (ISRU)</strong> for future
+                                    lunar missions. By leveraging local materials and abundant solar energy, solar sintering could
+                                    reduce the cost of transporting construction supplies from Earth and enable the creation of landing
+                                    pads, radiation shielding, and habitat components directly on the Moon.
+                                </p>
+
+                                <p>
+                                    Our next steps include automating powder deposition, refining the tracking system, and testing
+                                    under vacuum conditions to better simulate the lunar environment. This project represents an early
+                                    step toward sustainable human presence beyond Earth—showing that with ingenuity, today’s laboratory
+                                    demonstrations can become tomorrow’s lunar infrastructure.
+                                </p>
+							
+                                <p>
+                                    A paper on this has been approved to be presented at AIAA Scitech 2026 in Orlando, Florida.
+                                </p>
+                                <ul class="actions special">
+    								<li><a href="index.html#first" class="button">Back to Projects</a></li>
+								</ul>
+                            </section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h2>Contact Me</h2>
+							<dl class="alt">
+								<dt>Location</dt>
+								<dd>Orlando, Florida, USA</dd>
+								<dt>Phone</dt>
+								<dd>(786) 518-8017</dd>
+								<dt>Email</dt>
+								<dd>sreelekshmi.sreek@gmail.com</dd>
+							</dl>
+							<ul class="icons">
+								<li><a href="https://github.com/sreeskmr/" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.linkedin.com/in/sreelekshmisreekumar/" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
+							</ul>
+						</section>
+						<p class="copyright">&copy; Hire Me Blue Origin. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
