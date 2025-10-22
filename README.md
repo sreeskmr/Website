@@ -4,7 +4,7 @@ A simple, fast personal website built from the **Stellar** template by [HTML5 UP
 
 ## Preview
 - **Live site:** https://<your-username>.github.io/<repo-name>/
-- **Domain (optional):** hiremeblueorigin.com → points here via GitHub Pages.
+- **Domain (optional):** sreelekshmisreekumar.com → points here via GitHub Pages.
 
 ## Structure
 ```
